@@ -1,0 +1,12 @@
+{
+  "name": "hollywood-data",
+  "displayName": "hollywood-data",
+  "expo": {
+    "name": "hollywood-data",
+    "slug": "hollywood-data",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
