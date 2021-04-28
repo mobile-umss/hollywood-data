@@ -1,0 +1,428 @@
+{
+	"info": {
+		"_postman_id": "2d58bf5e-dfa7-449b-a29f-2b35ae587d19",
+		"name": "Hollywood data API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "Latest",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/movie/latest",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"movie",
+								"latest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Now Playing",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/movie/now_playing",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"movie",
+								"now_playing"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Popular",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/movie/popular",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"movie",
+								"popular"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Top Rated",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/movie/top_rated",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"movie",
+								"top_rated"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upcoming",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/movie/upcoming",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"movie",
+								"upcoming"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/movie/399566",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"movie",
+								"399566"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Series",
+			"item": [
+				{
+					"name": "Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/tv/1416",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"tv",
+								"1416"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Images",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/tv/95557/images",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"tv",
+								"95557",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Similar TV Shows",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/tv/95557/similar",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"tv",
+								"95557",
+								"similar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Videos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/tv/95557/videos",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"tv",
+								"95557",
+								"videos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Watch Providers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/tv/95557/watch/providers",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"tv",
+								"95557",
+								"watch",
+								"providers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Latest",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/tv/latest",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"tv",
+								"latest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TV Airing Today",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/tv/airing_today",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"tv",
+								"airing_today"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Popular",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/tv/popular",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"tv",
+								"popular"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Top Rated",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/tv/top_rated",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"tv",
+								"top_rated"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Genres",
+			"item": [
+				{
+					"name": "Movie List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/genre/movie/list",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"genre",
+								"movie",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TV List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/genre/tv/list",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"genre",
+								"tv",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Others",
+			"item": [
+				{
+					"name": "Actor Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/person/6384",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"person",
+								"6384"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Company Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{api_url}}/company/138252",
+							"host": [
+								"{{api_url}}"
+							],
+							"path": [
+								"company",
+								"138252"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "api_key",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "query",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "0b24b49ff5d11b8cb89272ce0af22bb0",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "api_url",
+			"value": "https://api.themoviedb.org/3"
+		},
+		{
+			"key": "api_key",
+			"value": "0b24b49ff5d11b8cb89272ce0af22bb0"
+		}
+	]
+}
