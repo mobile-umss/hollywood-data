@@ -1,11 +1,26 @@
 import React, { Component } from 'react'
 import { Text, View } from 'react-native'
+import CompanyAPI from '../api/Company';
+import { Company } from '../models/company';
 
-export class Explore extends Component {
+export class Explore extends Component<{}, { title:String}> {
+  constructor(props:any){
+    super(props)
+    this.state = {
+      title : ""
+    }
+  }
+
+  async componentDidMount() {
+    let company: Company = await CompanyAPI.getInstance().getCompanyById("138252")
+    this.setState({ title: company.name });
+    console.log(company)
+  }
+
   render() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text> Explore </Text>
+        <Text> {this.state.title}</Text>
       </View>
     )
   }
