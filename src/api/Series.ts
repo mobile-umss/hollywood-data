@@ -6,6 +6,7 @@ export default class SeriesAPI {
 
   private constructor() {}
 
+  // latest,tv airing today, top rated
   static getInstance(): SeriesAPI {
     if (!SeriesAPI.instance) {
       SeriesAPI.instance = new SeriesAPI();

@@ -13,8 +13,17 @@ export default class MovieAPI {
     return MovieAPI.instance;
   }
 
-  async getTopRated(): Promise<Movie[]> {
+  // now playing  top rated upcoming
+  async getPopular(): Promise<Movie[]> {
     let movies: Movie[] = await (await api.get("/movie/popular")).data.results
     return movies
   }
+  
+  // data es el response, dentro del response , tienes que ver, que hay 
+  // eso es en el postman 
+  async getLatest(): Promise<Movie> {
+    let movies: Movie = await (await api.get("/movie/latest")).data
+    return movies
+  }
+
 }

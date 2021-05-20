@@ -11,10 +11,15 @@ export class Movies extends Component<{}, { title: String }> {
     };
   }
 
+ 
+  //. map , aplica la funcion a cada element
   async componentDidMount() {
-    let movies: Movie[] = await MovieAPI.getInstance().getTopRated();
-    this.setState({ title: movies.map( movie => movie.original_title ).toString()})
+    // let movies: Movie[] = await MovieAPI.getInstance().getTopRated();
+    // this.setState({ title: movies.map( movie => movie.original_title ).toString()})
+    let movie: Movie = await MovieAPI.getInstance().getLatest();
+    this.setState({ title: movie.title})
   }
+ 
   render() {
     const auxTitle = this.state.title;
     return (
