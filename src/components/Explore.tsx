@@ -1,14 +1,19 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native'
 import CompanyAPI from '../api/Company';
 import { Company } from '../models/company';
 
-export class Explore extends Component<{}, { title:String}> {
-  constructor(props:any){
-    super(props)
-    this.state = {
-      title : ""
-    }
+
+interface ExploreState {
+  title:String
+}
+interface ExploreProps{
+  title2: String
+}
+export class Explore extends Component<ExploreProps, ExploreState> {
+
+  state = {
+    title : this.props.title2
   }
 
   async componentDidMount() {
@@ -19,11 +24,15 @@ export class Explore extends Component<{}, { title:String}> {
 
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={styles.titleText}>
         <Text> {this.state.title}</Text>
       </View>
     )
   }
 }
-
+const styles = StyleSheet.create({
+  titleText: {
+     flex: 1, justifyContent: 'center', alignItems: 'center' 
+  },
+});
 export default Explore

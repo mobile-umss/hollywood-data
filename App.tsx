@@ -6,6 +6,7 @@ import Movies from "./src/components/Movies";
 import Series from "./src/components/Series";
 import Explore from "./src/components/Explore";
 import { Ionicons } from "@expo/vector-icons";
+import { Demo } from "./src/components/demo";
 
 const Tab = createBottomTabNavigator();
 export default function App() {
@@ -35,6 +36,15 @@ export default function App() {
         <Tab.Screen
           name="Explore"
           component={Explore}
+          options={{
+            tabBarIcon: ({ color, size }) => (
+              <Ionicons name="globe" color={color} size={size} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Demo"
+          component={Demo}
           options={{
             tabBarIcon: ({ color, size }) => (
               <Ionicons name="globe" color={color} size={size} />
