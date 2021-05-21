@@ -26,4 +26,19 @@ export default class MovieAPI {
     return movies
   }
 
+  async getNowPlaying(): Promise<Movie[]> {
+    let movies: Movie[] = await (await api.get("/movie/now_playing")).data.results
+    return movies
+  }
+
+  async getTopRated(): Promise<Movie[]> {
+    let movies: Movie[] = await (await api.get("/movie/top_rated")).data.results
+    return movies
+  }
+
+  async getUpcoming(): Promise<Movie[]> {
+    let movies: Movie[] = await (await api.get("/movie/upcoming")).data.results
+    return movies
+  }
+  
 }
