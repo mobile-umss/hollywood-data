@@ -16,8 +16,10 @@ export class Movies extends Component<{}, { title: String }> {
   async componentDidMount() {
     // let movies: Movie[] = await MovieAPI.getInstance().getTopRated();
     // this.setState({ title: movies.map( movie => movie.original_title ).toString()})
-    let movie: Movie = await MovieAPI.getInstance().getLatest();
-    this.setState({ title: movie.title})
+    // let movie: Movie = await MovieAPI.getInstance().getNowPlaying();
+    // this.setState({ title: movie.title})
+    let movies: Movie[] = await MovieAPI.getInstance().getUpcoming();
+    this.setState({ title: movies.map( movie => movie.original_title ).toString()})
   }
  
   render() {
