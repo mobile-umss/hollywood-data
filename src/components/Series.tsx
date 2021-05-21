@@ -41,7 +41,7 @@ export class Series extends Component<{}, { title: String }> {
   //Prueba para top rated
   ///*
   async componentDidMount() {
-    let series: Serie[] = await SeriesAPI.getInstance().getTvAringToday();
+    let series: Serie[] = await SeriesAPI.getInstance().getTvAiringToday();
     this.setState({ title: series.map((serie) => serie.name).toString() });
   }  
   //*/
