@@ -10,10 +10,41 @@ export class Series extends Component<{}, { title: String }> {
       title: "",
     };
   }
-  async componentDidMount() {
+  //Original para ver nombres series popular
+  /*async componentDidMount() {
     let series: Serie[] = await SeriesAPI.getInstance().getPopular();
     this.setState({ title: series.map((serie) => serie.name).toString() });
+  }*/
+
+  //Prueba para ver latest
+  /*async componentDidMount() {
+    let serie: Serie = await SeriesAPI.getInstance().getLatest();
+    this.setState({ title: serie.name})
+  }*/
+  //paso
+
+  //Prueba para ver airing today
+  /*async componentDidMount() {
+    let series: Serie[] = await SeriesAPI.getInstance().getTvAringToday();
+    this.setState({ title: series.map((serie) => serie.name).toString() });
+  }*/
+
+  /*
+  //Prueba para airing today
+  async componentDidMount() {
+    let series: Serie[] = await SeriesAPI.getInstance().getTvAringToday();
+    this.setState({ title: series.map((serie) => serie.name).toString() });
   }
+  //paso
+  */
+
+  //Prueba para top rated
+  ///*
+  async componentDidMount() {
+    let series: Serie[] = await SeriesAPI.getInstance().getTvAringToday();
+    this.setState({ title: series.map((serie) => serie.name).toString() });
+  }  
+  //*/
   render() {
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>

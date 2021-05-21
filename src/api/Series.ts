@@ -18,4 +18,20 @@ export default class SeriesAPI {
     let series: Serie[] = await (await api.get("/tv/popular")).data.results
     return series
   }
+
+  async getLatest(): Promise<Serie> {
+    let series: Serie = await (await api.get("/tv/latest")).data
+    return series
+  }
+
+  async getTvAringToday(): Promise<Serie[]> {
+    let series: Serie[] = await (await api.get("/tv/airing_today")).data.results
+    return series
+  }
+
+  async getTopRated(): Promise<Serie> {
+    let series: Serie = await (await api.get("/tv/top_rated")).data.results
+    return series
+  }
+
 }
