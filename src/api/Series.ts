@@ -24,7 +24,7 @@ export default class SeriesAPI {
     return series
   }
 
-  async getTvAringToday(): Promise<Serie[]> {
+  async getTvAiringToday(): Promise<Serie[]> {
     let series: Serie[] = await (await api.get("/tv/airing_today")).data.results
     return series
   }
