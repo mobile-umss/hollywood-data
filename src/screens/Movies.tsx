@@ -3,6 +3,8 @@ import { Text, View } from "react-native";
 import MovieAPI from "../api/Movies";
 import { Movie } from "../models/movie";
 
+
+
 export class Movies extends Component<{}, { title: String }> {
   constructor(props: any) {
     super(props);
@@ -12,12 +14,7 @@ export class Movies extends Component<{}, { title: String }> {
   }
 
  
-  //. map , aplica la funcion a cada element
   async componentDidMount() {
-    // let movies: Movie[] = await MovieAPI.getInstance().getTopRated();
-    // this.setState({ title: movies.map( movie => movie.original_title ).toString()})
-    // let movie: Movie = await MovieAPI.getInstance().getNowPlaying();
-    // this.setState({ title: movie.title})
     let movies: Movie[] = await MovieAPI.getInstance().getUpcoming();
     this.setState({ title: movies.map( movie => movie.original_title ).toString()})
   }
