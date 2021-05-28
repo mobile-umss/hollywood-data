@@ -4,16 +4,16 @@ import MovieAPI from "../api/Movies";
 import { Movie } from "../models/movie";
 
 
+interface MoviesState{
+  title:String
+}
 
-export class Movies extends Component<{}, { title: String }> {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      title: '',
-    };
+export default class MoviesScreen extends Component<{}, MoviesState> {
+  
+  state = {
+    title: '',
   }
 
- 
   async componentDidMount() {
     let movies: Movie[] = await MovieAPI.getInstance().getUpcoming();
     this.setState({ title: movies.map( movie => movie.original_title ).toString()})
@@ -29,4 +29,3 @@ export class Movies extends Component<{}, { title: String }> {
   }
 }
 
-export default Movies;

@@ -1,12 +1,14 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import Movies from "../screens/Movies";
-import Series from "../screens/Series";
-import Explore from "../screens/Explore";
+
+import SeriesScreen from "../screens/SeriesScreen";
+import ExploreScreen from "../screens/ExploreScreen";
 import { Ionicons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { DrawerActions } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
+import MoviesScreen from "../screens/MoviesScreen";
+import Movies2 from "../screens/Movies2";
 
 const Stack = createStackNavigator();
 
@@ -49,12 +51,10 @@ const screenOptionStyle = {
   headerRight: () => getSearchButton(),
 };
 
-const MainStackNavigator = () => {
+const MoviesNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <Stack.Screen name="Movies" component={Movies} />
-      <Stack.Screen name="Series" component={Series} />
-      <Stack.Screen name="Explore" component={Explore} />
+      <Stack.Screen name="Movies" component={MoviesScreen} />
     </Stack.Navigator>
   );
 };
@@ -62,7 +62,7 @@ const MainStackNavigator = () => {
 const SeriesStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <Stack.Screen name="Series" component={Series} />
+      <Stack.Screen name="Series" component={SeriesScreen} />
     </Stack.Navigator>
   );
 };
@@ -70,9 +70,9 @@ const SeriesStackNavigator = () => {
 const ExploreStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <Stack.Screen name="Explore" component={Explore} />
+      <Stack.Screen name="Explore" component={ExploreScreen} />
     </Stack.Navigator>
   );
 };
 
-export { MainStackNavigator, SeriesStackNavigator, ExploreStackNavigator };
+export { MoviesNavigator, SeriesStackNavigator, ExploreStackNavigator };
