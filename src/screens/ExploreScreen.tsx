@@ -3,7 +3,7 @@ import { Text, View } from 'react-native'
 import CompanyAPI from '../api/Company';
 import { Company } from '../models/company';
 
-export class Explore extends Component<{}, { title:String}> {
+export class ExploreScreen extends Component<{}, { title:String}> {
   constructor(props:any){
     super(props)
     this.state = {
@@ -26,4 +26,4 @@ export class Explore extends Component<{}, { title:String}> {
   }
 }
 
-export default Explore
+export default ExploreScreen

@@ -13,7 +13,7 @@ import Carousel, {
   ParallaxImage,
 } from "react-native-snap-carousel";
 import MovieAPI from "../api/Movies";
-import ImageView from "../components/ImageView";
+import ImageComponent from "../components/ImageView";
 import { Movie } from "../models/movie";
 
 interface MovieState {
@@ -29,12 +29,13 @@ interface RenderItem {
   parallaxProps: any;
 }
 interface ParallaxProps {
+  
   parallaxProps?: AdditionalParallaxProps;
 }
 
 const { width: screenWidth } = Dimensions.get("window");
 
-export default class Movies extends Component<{}, MovieState> {
+export default class Movies2 extends Component<{}, MovieState> {
   _carousel: any;
   state = {
     popularMovies: new Array<Movie>(),
@@ -56,11 +57,8 @@ export default class Movies extends Component<{}, MovieState> {
     });
   }
 
-  _renderItem = (
-    { item, index }: RenderItem,
-    { parallaxProps }: ParallaxProps
+  _renderItem = ({ item, index }: RenderItem,   { parallaxProps }: ParallaxProps
   ): any => {
-    console.log(item.original_title);
     return (
       <View
         style={{
@@ -76,7 +74,7 @@ export default class Movies extends Component<{}, MovieState> {
           parallaxFactor={0.4}
           {...parallaxProps}
         />
-        <ImageView url={item.poster_path} />
+        <ImageComponent url={item.poster_path} />
       </View>
     );
   };
@@ -105,7 +103,7 @@ export default class Movies extends Component<{}, MovieState> {
             itemHeight={screenWidth - 60}
             itemWidth={120}
             renderItem={this._renderItem}
-            hasParallaxImages={true}
+            hasParallaxImages={false}
           />
         </View>
         <Text style={styles.text}>Top Rated</Text>

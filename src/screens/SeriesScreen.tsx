@@ -4,7 +4,7 @@ import SeriesAPI from "../api/Series";
 import { Serie } from "../models/series";
 
 
-export class Series extends Component<{}, { title: String }> {
+export class SeriesScreen extends Component<{}, { title: String }> {
   constructor(props: any) {
     super(props);
     this.state = {
@@ -26,4 +26,4 @@ export class Series extends Component<{}, { title: String }> {
   }
 }
 
-export default Series;
+export default SeriesScreen;

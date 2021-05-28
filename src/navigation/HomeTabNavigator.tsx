@@ -1,17 +1,17 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { ExploreStackNavigator, MainStackNavigator, SeriesStackNavigator } from "./stackNavigator";
+import { ExploreStackNavigator, MoviesNavigator, SeriesStackNavigator } from "./stackNavigator";
 import { Ionicons } from "@expo/vector-icons";
 
 
 const Tab = createBottomTabNavigator();
 
-const BottomTabNavigator = () => {
+const HomeTabNavigator = () => {
   return (
     <Tab.Navigator>
     <Tab.Screen
       name="Movies"
-      component={MainStackNavigator}
+      component={MoviesNavigator}
       options={{
         tabBarIcon: ({ color, size }) => (
           <Ionicons name="film" color={color} size={size} />
@@ -42,4 +42,4 @@ const BottomTabNavigator = () => {
   );
 };
 
-export default BottomTabNavigator;
+export default HomeTabNavigator;

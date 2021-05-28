@@ -7,7 +7,7 @@ interface ImageViewProps {
 }
 const { width: screenWidth } = Dimensions.get('window')
 
-export default class ImageView extends Component<ImageViewProps, {}> {
+export default class ImageComponent extends Component<ImageViewProps, {}> {
   render() {
     const fullUrl = "https://image.tmdb.org/t/p/w500" + this.props.url;
     return <Image style={styles.poster} source={{ uri: fullUrl }} />;
