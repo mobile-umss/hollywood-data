@@ -29,8 +29,8 @@ export default class SeriesAPI {
     return series
   }
 
-  async getTopRated(): Promise<Serie> {
-    let series: Serie = await (await api.get("/tv/top_rated")).data.results
+  async getTopRated(): Promise<Serie[]> {
+    let series: Serie[] = await (await api.get("/tv/top_rated")).data.results
     return series
   }
 
