@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, StyleSheet, Platform, FlatList } from "react-native";
+import { Text, View, StyleSheet, Platform, FlatList, TouchableOpacity } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import SeriesAPI from "../api/Series";
 import ImageView from "../components/ImageView";
@@ -42,7 +42,15 @@ export default class SeriesScreen extends Component<{}, SerieState> {
         data={series}
         extraData={this.state}
         keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => <ImageView url={item.poster_path} />}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            onPress={() => {
+              console.log(item.name)
+            }}
+          >
+            <ImageView url={item.poster_path} />
+          </TouchableOpacity>
+        )}
       />
     );
   };
