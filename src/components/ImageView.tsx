@@ -16,7 +16,7 @@ export default class ImageComponent extends Component<ImageViewProps, {}> {
 const styles = StyleSheet.create({
   poster: {
     width: 100,
-    height: 150,
+    height: 200,
     resizeMode: "cover",
   },
 });

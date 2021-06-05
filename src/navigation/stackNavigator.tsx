@@ -8,7 +8,6 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import { DrawerActions } from "@react-navigation/native";
 import { useNavigation } from "@react-navigation/native";
 import MoviesScreen from "../screens/MoviesScreen";
-import Movies2 from "../screens/Movies2";
 
 const Stack = createStackNavigator();
 
@@ -54,7 +53,7 @@ const screenOptionStyle = {
 const MoviesNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <Stack.Screen name="Movies" component={MoviesScreen} />
+      <Stack.Screen name="Movies" component={MoviesScreen} /> 
     </Stack.Navigator>
   );
 };
