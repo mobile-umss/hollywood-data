@@ -1,16 +1,6 @@
 import React, { Component } from "react";
-import {
-  Dimensions,
-  Text,
-  View,
-  StyleSheet,
-  Platform,
-} from "react-native";
+import { Text, View, StyleSheet, Platform, FlatList } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import Carousel, {
-  AdditionalParallaxProps,
-  ParallaxImage,
-} from "react-native-snap-carousel";
 import MovieAPI from "../api/Movies";
 import ImageView from "../components/ImageView";
 import { Movie } from "../models/movie";
@@ -22,17 +12,6 @@ interface MovieState {
   loading: boolean;
   activeIndex: number;
 }
-interface RenderItem {
-  item: Movie;
-  index: number;
-  parallaxProps: any;
-}
-interface ParallaxProps {
-  parallaxProps?: AdditionalParallaxProps;
-}
-
-const { width: screenWidth } = Dimensions.get("window");
-
 export default class Movies extends Component<{}, MovieState> {
   _carousel: any;
   state = {
@@ -55,28 +34,15 @@ export default class Movies extends Component<{}, MovieState> {
     });
   }
 
-  _renderItem = (
-    { item, index }: RenderItem,
-    { parallaxProps }: ParallaxProps
-  ): any => {
-    console.log(item.original_title);
+  _prepareItems = (movies: Movie[]) => {
     return (
-      <View
-        style={{
-          borderRadius: 5,
-          height: 0,
-          padding: 50,
-        }}
-      >
-        <ParallaxImage
-          source={{ uri: item.poster_path }}
-          containerStyle={styles.imageContainer}
-          style={styles.image}
-          parallaxFactor={0.4}
-          {...parallaxProps}
-        />
-        <ImageView url={item.poster_path} />
-      </View>
+      <FlatList
+        horizontal={true}
+        data={movies}
+        extraData={this.state}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item }) => <ImageView url={item.poster_path} />}
+      />
     );
   };
 
@@ -94,47 +60,11 @@ export default class Movies extends Component<{}, MovieState> {
     return (
       <ScrollView>
         <Text style={styles.text}>Popular</Text>
-        <View style={{ marginTop: 0, height: 200 }}>
-          <Carousel
-            layout={"default"}
-            ref={(ref) => (this._carousel = ref)}
-            data={this.state.popularMovies}
-            sliderWidth={300}
-            sliderHeight={300}
-            itemHeight={screenWidth - 60}
-            itemWidth={120}
-            renderItem={this._renderItem}
-            hasParallaxImages={true}
-          />
-        </View>
+        {this._prepareItems(this.state.popularMovies)}
         <Text style={styles.text}>Top Rated</Text>
-        <View style={{ marginTop: 0, height: 200 }}>
-          <Carousel
-            layout={"default"}
-            ref={(ref) => (this._carousel = ref)}
-            data={this.state.topRatedMovies}
-            sliderWidth={300}
-            sliderHeight={300}
-            itemHeight={screenWidth - 60}
-            itemWidth={120}
-            renderItem={this._renderItem}
-            hasParallaxImages={true}
-          />
-        </View>
+        {this._prepareItems(this.state.topRatedMovies)}
         <Text style={styles.text}>Upcoming</Text>
-        <View style={{ marginTop: 0, height: 200 }}>
-          <Carousel
-            layout={"default"}
-            ref={(ref) => (this._carousel = ref)}
-            data={this.state.upcomingMovies}
-            sliderWidth={300}
-            sliderHeight={300}
-            itemHeight={screenWidth - 60}
-            itemWidth={120}
-            renderItem={this._renderItem}
-            hasParallaxImages={true}
-          />
-        </View>
+        {this._prepareItems(this.state.upcomingMovies)}
       </ScrollView>
     );
   }
@@ -157,6 +87,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   text: {
+    paddingTop: 5,
+    paddingBottom: 15,
     fontSize: 18,
     paddingLeft: 10,
   },
