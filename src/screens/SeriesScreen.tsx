@@ -5,6 +5,7 @@ import SeriesAPI from "../api/Series";
 import ImageView from "../components/ImageView";
 import { Serie } from "../models/series";
 
+
 interface SerieState {
   popularSeries: Serie[];
   topRatedSeries: Serie[];
@@ -46,8 +47,8 @@ export default class SeriesScreen extends Component<{}, SerieState> {
           <TouchableOpacity
             onPress={() => {
               console.log(item.name)
-            }}
-          >
+              this.props.navigation.navigate("SeriesDetails", {item});
+            }}>
             <ImageView url={item.poster_path} />
           </TouchableOpacity>
         )}
