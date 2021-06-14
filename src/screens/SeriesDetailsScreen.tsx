@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet, Image } from "react-native";
-import { Serie } from "../models/series";
 import { ScrollView } from "react-native-gesture-handler";
 
 
