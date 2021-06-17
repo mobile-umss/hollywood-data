@@ -1,25 +1,18 @@
-import React from "react";
-import { StyleSheet, Text, Image } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import React from 'react';
+import ItemLayout from '../components/ItemLayout';
+
+
 
 export default function MoviesDetailsScreen({ route }) {
   const { item } = route.params;
   const imgUrl = "https://image.tmdb.org/t/p/w500" + item.poster_path;
   return (
-    <ScrollView>
-      <Image style={styles.poster} source={{ uri: imgUrl }} />
-      <Text>Title: {item.title}</Text>
-      <Text>Release Date: {item.release_date}</Text>
-      <Text>Popularity: {item.popularity}</Text>
-      <Text>Plot: {item.overview}</Text>
-    </ScrollView>
+    <ItemLayout
+      title={item}
+      poster_path={imgUrl}
+      release_date={item.release_date}
+      popularity={item.popularity}
+      overview={item.overview}
+    />
   );
 }
-
-const styles = StyleSheet.create({
-  poster: {
-    width: 200,
-    height: 400,
-    resizeMode: "cover",
-  },
-});
