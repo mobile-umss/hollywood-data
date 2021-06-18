@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     zIndex: 10,
   },
   flexRow: { flexDirection: "row" },
-  textWhite: { color: "#ffffff" },
+  textWhite: { color: "#D6D6D6" },
   flexEnd: { alignItems: "flex-end" },
   popularity: { fontSize: 18 },
   desc: { marginTop: 10 },
