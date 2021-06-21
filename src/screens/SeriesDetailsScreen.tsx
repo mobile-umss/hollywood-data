@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ItemLayout from '../components/ItemLayout';
 import { Text, View, StyleSheet, Image } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
@@ -7,19 +8,27 @@ export default function SeriesDetailsScreen ({route}) {
     const { item } = route.params;
     const imgUrl = "https://image.tmdb.org/t/p/w500" + item.poster_path;
     return(
-        <ScrollView>
+        <ItemLayout
+        title={item.name}
+        poster_path={imgUrl}
+        release_date={item.first_air_date}
+        popularity={item.popularity}
+        overview={item.overview}
+      />
+       
+        /* <ScrollView>
             <Image style = {style.poster} source = {{ uri: imgUrl}} ></Image>
             <Text style={style.text}> TITLE:{item.name} </Text>
             <Text style={style.text}> FIRST AIR DATE: {item.first_air_date}  </Text>
             <Text style={style.text}> POPULARITY: {item.popularity} </Text>
             <Text style={style.text}> OVERVIEW: {item.overview} </Text>
-        </ScrollView>
+        </ScrollView>*/
     );
 }
 
 
 
-
+/*
 const style = StyleSheet.create({
     poster:{
         width: 300,
@@ -30,5 +39,5 @@ const style = StyleSheet.create({
 
     }
 })
-
+*/
 
