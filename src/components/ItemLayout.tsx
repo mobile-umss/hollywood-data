@@ -33,13 +33,15 @@ export class ItemLayout extends Component<ItemLayoutProps, {}> {
                 <Image style = {styles.image} source = {{ uri: imgUrl}} ></Image>                
                
                 <View style={styles.flexRow}>
-                    <Text style={[styles.textBlack]}>{release_date}</Text>
+                    <Text style={[styles.textBlack, styles.textBackGYellow]}>FIRST AIR DATE:</Text>
+                    <Text style={[styles.textBlack]}>  {release_date}</Text>
                 </View>
                 <View>
-                    <Text style={[styles.textWhite, styles.title, styles.textCenter, styles.textBackGBlack]}>{title}</Text>
+                    <Text style={[styles.textWhite, styles.title, styles.textCenter,
+                       styles.textBackGBlack]}>{title}</Text>
                     <View style={[styles.flexRow, styles.flexEnd]}>
                     <Text style={[styles.textBlack, styles.popularity, styles.textBackGRed]}>
-                        {popularity}
+                       POPULARITY: {popularity}
                     </Text>
                     </View>
                     <Text style={[styles.textBlack, styles.desc, styles.textJustif]} numberOfLines={36}>
@@ -54,7 +56,7 @@ export class ItemLayout extends Component<ItemLayoutProps, {}> {
 
 const styles = StyleSheet.create({
   container: { flex: 1 },
-  topContainer:{ height: (height - 150) / 2, width },
+  //topContainer:{ height: (height - 150) / 2, width },/
   image: {
     width: 300,
     height: 450,
@@ -80,6 +82,8 @@ const styles = StyleSheet.create({
   textCenter:{textAlign:'center'},
   textBackGRed:{backgroundColor: 'red'},
   textBackGBlack:{backgroundColor: 'black'},
+  textBackGYellow:{backgroundColor: 'yellow'},
+  textBackGLBlue:{backgroundColor: 'lightblue'},
   flexEnd: { alignItems: "flex-end" },
   popularity: { fontSize: 18 },
   desc: { marginTop: 10 },
