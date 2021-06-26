@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Text, View, StyleSheet, Platform, FlatList } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import MovieAPI from "../api/Movies";
 import ImageView from "../components/ImageView";
 import { Movie } from "../models/movie";
@@ -41,7 +41,15 @@ export default class Movies extends Component<{}, MovieState> {
         data={movies}
         extraData={this.state}
         keyExtractor={(item, index) => index.toString()}
-        renderItem={({ item }) => <ImageView url={item.poster_path} />}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            onPress={() => {
+              console.log(item.title);
+              this.props.navigation.navigate("MoviesDetails", { item });
+            }}>
+            <ImageView url={item.poster_path} />
+          </TouchableOpacity>
+        )}
       />
     );
   };
