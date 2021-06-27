@@ -1,4 +1,5 @@
 import api from "../api/http-commons";
+import { Actor } from "../models/actor";
 import { Genre } from "../models/Genre";
 import { Serie } from "../models/series";
 
@@ -38,6 +39,11 @@ export default class SeriesAPI {
   async getGenres(): Promise<Genre[]> {
     let genres: Genre[] = await (await api.get("/genre/tv/list")).data.genres
     return genres
+  }
+
+  async getCredits(serie_id: number): Promise<Actor[]> {
+    let actors: Actor[] = await (await api.get("/tv/"+serie_id+"/credits")).data.cast
+    return actors
   }
 
 }

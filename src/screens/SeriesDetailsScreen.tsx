@@ -11,9 +11,10 @@ export default function SeriesDetailsScreen ({route}) {
     return(
         <ItemLayout
         title={item.name}
+        id={item.id}
         poster_path={imgUrl}
         release_date={item.first_air_date}
-        popularity={item.popularity}
+        vote_average={item.vote_average}
         overview={item.overview}
         genres={item.genre_ids}
         serie={true}

@@ -10,9 +10,10 @@ export default function MoviesDetailsScreen({ route }) {
   return (
     <ItemLayout
       title={item.title}
+      id={item.id}
       poster_path={imgUrl}
       release_date={item.release_date}
-      popularity={item.popularity}
+      vote_average={item.vote_average}
       overview={item.overview}
       genres={item.genre_ids}
       serie={false}
