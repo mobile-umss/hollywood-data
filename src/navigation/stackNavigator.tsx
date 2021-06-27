@@ -33,7 +33,13 @@ const getMenuButton = () => {
 
 const getSearchButton = () => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity
+      onPress={
+        () => {
+          console.log("Buscar");
+        }
+      }
+    >
       <Ionicons
         style={{ paddingEnd: 10 }}
         name="search-outline"

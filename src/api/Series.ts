@@ -1,4 +1,5 @@
 import api from "../api/http-commons";
+import { Genre } from "../models/Genre";
 import { Serie } from "../models/series";
 
 export default class SeriesAPI {
@@ -32,6 +33,11 @@ export default class SeriesAPI {
   async getTopRated(): Promise<Serie[]> {
     let series: Serie[] = await (await api.get("/tv/top_rated")).data.results
     return series
+  }
+
+  async getGenres(): Promise<Genre[]> {
+    let genres: Genre[] = await (await api.get("/genre/tv/list")).data.genres
+    return genres
   }
 
 }

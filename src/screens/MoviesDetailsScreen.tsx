@@ -6,6 +6,7 @@ import ItemLayout from '../components/ItemLayout';
 export default function MoviesDetailsScreen({ route }) {
   const { item } = route.params;
   const imgUrl = "https://image.tmdb.org/t/p/w500" + item.poster_path;
+
   return (
     <ItemLayout
       title={item.title}
@@ -13,6 +14,8 @@ export default function MoviesDetailsScreen({ route }) {
       release_date={item.release_date}
       popularity={item.popularity}
       overview={item.overview}
+      genres={item.genre_ids}
+      serie={false}
     />
   );
 }

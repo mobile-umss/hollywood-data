@@ -7,6 +7,7 @@ import { ScrollView } from "react-native-gesture-handler";
 export default function SeriesDetailsScreen ({route}) {
     const { item } = route.params;
     const imgUrl = "https://image.tmdb.org/t/p/w500" + item.poster_path;
+    
     return(
         <ItemLayout
         title={item.name}
@@ -14,6 +15,8 @@ export default function SeriesDetailsScreen ({route}) {
         release_date={item.first_air_date}
         popularity={item.popularity}
         overview={item.overview}
+        genres={item.genre_ids}
+        serie={true}
       />
        
         /* <ScrollView>
